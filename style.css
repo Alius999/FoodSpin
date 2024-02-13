@@ -1,0 +1,245 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+.main-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 1280px;
+    min-height: 100vh;
+    height: 790px;
+    background-color: #fafafa;
+    margin: 0 auto;
+}
+
+.big-circle {
+    position: absolute;
+    width: 1177px;
+    height: 1177px;
+    background-color: #eaffe2;
+    border-radius: 50%;
+    left: 283px;
+    top: -645px;
+    overflow: hidden;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.nav-wrapper {
+    position: absolute;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    display: flex;
+    width: 1080px;
+    height: 27px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 46px;
+}
+
+.nav-list {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-link {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-decoration: none;
+    color: #333333;
+}
+
+.nav-item:not(:last-child) {
+    margin-right: 60px;
+}
+
+.logo-menu {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.login-link::before {
+    content: '';
+    display: block;
+    align-items: center;
+    width: 20px;
+    height: 22px;
+    background: url('images/login.svg') no-repeat;
+    float: left;
+}
+
+.dishes-wrapper {
+    position: absolute;
+    width: 610px;
+    height: 610px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    /* border: 1px solid red; */
+    bottom: 0;
+}
+
+.dishes-wrapper-animation {
+    animation-duration: 3s;
+    animation-name: carousel;
+    animation-fill-mode: forwards;
+}
+
+@keyframes carousel {
+    to {
+        transform: translate(-50%, 50%) rotate(36deg);
+    }
+}
+
+.dishes-wrapper-animation-push {
+    animation-duration: 1.5s;
+    animation-name: carousel-push;
+    animation-fill-mode: forwards;
+}
+
+@keyframes carousel-push {
+    to {
+        transform: translate(-50%, 50%) rotate(45deg);
+    }
+}
+
+.dishes-circle {
+    position: absolute;
+    z-index: 2;
+    width: 560px;
+    height: 560px;
+    border: 3px dashed #E87F1E;
+    border-radius: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+}
+
+.dishes-item {
+    position: absolute;
+}
+
+.main-dishes-wrapper {
+    position: absolute;
+    width: 610px;
+    height: 610px;
+    top: 225px;
+    right: 103px;
+    /* border: 1px solid red; */
+}
+
+.arrow {
+    position: absolute;
+    top: 60%
+}
+
+.left-arrow {
+    left: 0;
+    cursor: pointer;
+}
+
+.right-arrow {
+    right: 0;
+    cursor: pointer;
+}
+
+.main-dishes {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.price-about {
+    position: absolute;
+    width: 365px;
+    /* border: 1px solid red; */
+    left: 100px;
+    top: 305px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.price-about .price {
+    margin: 0;
+    padding: 0;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 66px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #54BF29;
+}
+
+.price-about .header {
+    margin: 0;
+    padding: 0;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 50px;
+    letter-spacing: 0em;    
+    text-align: left;
+    color: #333333;
+}
+
+.price-about .content {
+    margin: 15px 0 0;
+    padding: 0;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;    
+    text-align: left;
+    color: #333333;
+}
+
+.order-button {
+    margin-top: 30px;
+    display: grid;
+    align-items: center;
+    width: 163px;
+    height: 48px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: center;
+    background-color: #54BF29;
+    color: #FFFFFF;
+    border-radius: 24px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.text-footer {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #000000;
+    left: 100px;
+    bottom: 30px;
+}

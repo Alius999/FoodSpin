@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1280, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>FoodSpin</title>
+</head>
+<body>
+    <main class="main-wrapper">
+        <header class="header-wrapper">
+            <nav class="nav-wrapper">
+                <div class="logo-menu">
+                    <a href="#"><img src="images/logo.svg" alt="Логотип"></a>
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="#" class="nav-link">Breakfast</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Lunch</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Dinner</a></li>
+                    </ul>
+                </div>
+                <a href="#" class="login-link">
+                    <span class="login visually-hidden">Login</span>
+                </a>
+            </nav>
+        </header>
+        <div class="big-circle">
+            <div class="dishes-wrapper">
+                <svg width="590" height="590">
+                    <circle r="280" cx="305" cy="305"  fill="none" stroke="#E87F1E" stroke-width="2" stroke-dasharray="10,15"/>
+                </svg>
+                    <img class="dishes-item" src="images/dishes/dishes1.png" width="210" height="186" alt="">
+                    <img class="dishes-item" src="images/dishes/dishes2.png" width="200" height="200" alt="">
+                    <img class="dishes-item" src="images/dishes/dishes3.png" width="200" height="200" alt="">
+                    <img class="dishes-item" src="images/dishes/dishes4.png" width="200" height="200" alt="">
+                    <img class="dishes-item" src="images/dishes/dishes5.png" width="200" height="180" alt="">
+                    <img class="dishes-item" src="images/dishes/dishes1.png" width="210" height="186" alt="">
+                    <img class="dishes-item" src="images/dishes/dishes2.png" width="200" height="200" alt="">
+                    <img class="dishes-item" src="images/dishes/dishes3.png" width="200" height="200" alt="">
+                    <img class="dishes-item" src="images/dishes/dishes4.png" width="200" height="200" alt="">
+                    <img class="dishes-item" src="images/dishes/dishes5.png" width="200" height="180" alt="">
+            </div>
+        </div>
+        <div class="main-dishes-wrapper">
+            <img class="main-dishes" src="images/dishes/main-dishes.png" width="290" height="295" alt="">
+            <img class="arrow left-arrow" src="images/arrow.svg" width="70" height="70" alt="">
+            <img class="arrow right-arrow" src="images/arrow.svg" width="70" height="70" alt="">
+        </div>
+        <section class="price-about">
+            <p class="price">$35</p>
+            <p class="header">Asian Cucumber Salad</p>
+            <p class="content">Asian Cucumber Salad Recipe Made With Crunchy <br>
+                 Cucumber, Onion, Rice Wine Vinegar, And A Few Secret Ingredients!</p>
+            <a class="order-button" href="#">Order now</a>
+        </section>
+        <footer>
+            <p class="text-footer">Watch The Video</p>
+        </footer>
+    </main>
+    <script>
+        let dishesItems = document.querySelectorAll('.dishes-item');
+        let dishesWrapper = document.querySelector('.dishes-wrapper');
+        let leftArrow = document.querySelector('.left-arrow');
+        let rightArrow = document.querySelector('.right-arrow');
+        let dishesQuantity = dishesItems.length;
+
+        let degree = 360 / dishesQuantity + 0.75;
+        let radius = 280;
+        let wrapperWidth = dishesWrapper.offsetWidth;
+        let wrapperHeight = dishesWrapper.offsetHeight;
+
+        let step = (2 * Math.PI) / dishesQuantity;
+        console.log(step);
+
+        for (let item of dishesItems) {
+            let x = Math.round(wrapperWidth / 2 + radius * Math.cos(degree) - item.offsetWidth / 2);
+            let y = Math.round(wrapperHeight / 2 + radius * Math.sin(degree) - item.offsetHeight / 2 + 20)
+            item.style.left = x + 'px';
+            item.style.top = y + 'px';
+            // console.log(x);
+            degree += step;
+        }
+
+        let z = 0
+
+        leftArrow.addEventListener('click', () => {
+            z -= 36;
+            dishesWrapper.style.transform = 'translate(-50%, 50%) rotate(' + z + 'deg)';
+            dishesWrapper.style.transition = '1s';
+        });
+
+        rightArrow.addEventListener('click', () => {
+            z += 36;
+            dishesWrapper.style.transform = 'translate(-50%, 50%) rotate(' + z + 'deg)';
+            dishesWrapper.style.transition = '1s';
+        });
+    </script>
+</body>
+</html>
